@@ -93,7 +93,7 @@
 // import Works from './components/Works.vue'
 
 export default {
-  name: 'HelloWorld',
+  name: 'HomePage',
 
   data: () => ({
     ecosystem: [

@@ -2,8 +2,8 @@
   <header class="back">
     <v-app-bar
       app
-      color="white"
-      elevate-on-scroll
+      color="transparent"
+      flat
     >
       <v-img
         position="relative"
@@ -12,15 +12,31 @@
       ></v-img>
       <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
       <v-tabs absolute right v-model="page">
-        <v-tab v-for="(menuItem, index) in menuItems" :key="index">
+        <v-tab v-for="(menuItem, index) in menuItems" :key="index" @click='getScrollY()'>
           {{ menuItem.name }}
         </v-tab>
+         <v-tabs-slider color="transparent" />
       </v-tabs>
+      <v-img
+        position="relative"
+        style="width: 15px; margin-left: 30px;"
+        src="../assets/twitter.png"
+      ></v-img>
+      <v-img
+        position="relative"
+        style="width: 15px; margin-left: 20px;"
+        src="../assets/insta.png"
+      ></v-img>
+      <v-img
+        position="relative"
+        style="width: 70px; margin-left: 30px;"
+        src="../assets/documents.png"
+      ></v-img>
     </v-app-bar>
-    <v-navigation-drawer v-model="drawer" absolute temporary>
+    <v-navigation-drawer v-model="drawer" absolute temporary style="position:fixed;">
       <v-list nav dense>
         <v-list-item-group v-model="page">
-          <v-list-item v-for="(menuItem, index) in menuItems" :key="index">
+          <v-list-item v-for="(menuItem, index) in menuItems" :key="index" @click='getScrollY()'>
             <v-list-item-title>{{ menuItem.name }}</v-list-item-title>
           </v-list-item>
         </v-list-item-group>
@@ -44,6 +60,16 @@ export default {
   watch: {
     page: function (val) {
       this.$emit('changePage', val)
+    }
+  },
+  methods: {
+    getScrollY () {
+      window.scroll(
+        {
+          top: 0,
+          behavior: 'smooth'
+        }
+      )
     }
   }
 }
@@ -74,7 +100,7 @@ export default {
 
 .v-tab {
     text-transform: none;
-    font-family: 'Bahnschrift' sans-serif;
+    font-family: Bahnschrift;
     font-weight: bold;
     font-size: 105%;
 }
@@ -89,7 +115,7 @@ export default {
 }
 
 .back {
-  background-color: #ebedf7;
+  background-color: rgba(255, 187, 0, 0.089);
 }
 
 </style>

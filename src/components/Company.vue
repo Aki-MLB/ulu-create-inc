@@ -3,7 +3,7 @@
     <v-row class='text-center'>
       <div class="scrolldown2"><span>Company</span></div>
       <v-col cols='12'>
-        <h1 class='display-2 font-weight-bold mb-3' style="font-size: 150%;">
+        <h1 class='mb-3 bahn' style="font-size: 390%;">
           Company
         </h1>
         <v-img
@@ -45,7 +45,7 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'CompanyPage',
 
   data: () => ({
     ecosystem: [
@@ -182,5 +182,12 @@ export default {
   width: 2px;
   height: 70px;
   background: rgba(0, 0, 0, 0.377);
+}
+
+.bahn {
+  text-transform: none;
+  font-family: Bahnschrift;
+  font-size: 105%;
+  letter-spacing: 0.08em;
 }
 </style>

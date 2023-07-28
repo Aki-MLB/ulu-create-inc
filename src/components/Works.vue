@@ -2,34 +2,112 @@
   <v-container fluid fill-height>
     <v-row class='text-center'>
       <div class="scrolldown2"><span>Scroll</span></div>
-      <v-col cols='12'>
-        <h1 class='display-2 font-weight-bold mb-3' style="font-size: 150%;">
+     <v-col cols='6'>
+        <h1 class='mb-3 bahn' style="font-size: 250%; margin-top: 20px;">
           Works
         </h1>
-        <v-img
-          :src="require('../assets/top_demo.jpg')"
-          class='my-3'
-          contain
-          height='400'
-        />
       </v-col>
-      <v-col class='mb-4'>
+      <v-col cols='12'>
         <p class='subheading font-weight-regular'>
-          ulu create inc made works.
-          <a href='https://community.vuetifyjs.com' target='_blank'
-            >Discord Community</a
-          >
+          These are ulu create inc made works.
         </p>
-        <v-col cols='12'>
-          <div col='4'>
-            aaa
-          </div>
-          <div col='4'>
-            aaa
-          </div>
-        </v-col>
+        <v-row>
+          <v-col cols='4'>
+            <div class='zoomInText' @click="showModal('Mh-SC9aWdws')">
+              <span class='mask'>
+                <img src='../assets/pug.jpg' alt=''>
+                <span class='title-name cap'>
+                </span>
+                <span class='cap'>
+                </span>
+              </span>
+            </div>
+            <div class="sumnale">
+              <p style="margin-left: 10px;">
+                pug<br>
+                <span style="padding-left: 5px;">└はじまりの歌</span>
+              </p>
+            </div>
+          </v-col>
+          <v-col cols='4'>
+            <div class='zoomInText' @click="showModal('NYhwDY01Zv8')">
+              <span class='mask'>
+                <img src='../assets/tenjou_tenge.jpg' alt=''>
+                <!-- <span class='title-name cap'>
+                  天上天下
+                </span>
+                <span class='cap'>
+                  君に価値なんてないよ
+                </span> -->
+              </span>
+            </div>
+            <div class="sumnale">
+              <p style="margin-left: 10px;">
+                天上天下<br>
+                <span style="padding-left: 5px;">└君に価値なんてないよ</span>
+              </p>
+            </div>
+          </v-col>
+          <v-col cols='4'>
+            <div class='zoomInText' @click="showModal()">
+              <span class='mask'>
+                <img src='../assets/ibara_bluse.jpg' alt='wHamtmY6png'>
+                <!-- <span class='title-name cap'>
+                  パレットパレッツ
+                </span>
+                <span class='cap'>
+                  イバラブルース
+                </span> -->
+              </span>
+            </div>
+            <div class="sumnale">
+              <p style="margin-left: 10px;">
+                パレットパレッツ<br>
+                <span style="padding-left: 5px; padding-right:5px;">└イバラブルース</span>
+              </p>
+            </div>
+          </v-col>
+          <v-col cols='4'>
+            <div class='zoomInText' @click="showModal('Mh-SC9aWdws')">
+              <span class='mask'>
+                <img src='../assets/pug.jpg' alt=''>
+                <span class='title-name cap'>
+                  pug
+                </span>
+                <span class='cap'>
+                  はじまりの歌
+                </span>
+              </span>
+            </div>
+          </v-col>
+          <v-col cols='4'>
+            <div class='zoomInText' @click="showModal('NYhwDY01Zv8')">
+              <span class='mask'>
+                <img src='../assets/tenjou_tenge.jpg' alt=''>
+                <span class='title-name cap'>
+                  天上天下
+                </span>
+                <span class='cap'>
+                  君に価値なんてないよ
+                </span>
+              </span>
+            </div>
+          </v-col>
+          <v-col cols='4'>
+            <div class='zoomInText' @click="showModal()">
+              <span class='mask'>
+                <img src='../assets/ibara_bluse.jpg' alt='wHamtmY6png'>
+                <span class='title-name cap'>
+                  パレットパレッツ
+                </span>
+                <span class='cap'>
+                  イバラブルース
+                </span>
+              </span>
+            </div>
+          </v-col>
+        </v-row>
       </v-col>
-
       <v-col class='mb-5' cols='12'>
         <h2 class='headline font-weight-bold mb-3'>
           Next Contents👉
@@ -84,84 +162,105 @@
         </v-row>
       </v-col>
     </v-row>
+    <MovieModal
+      :videoId="videoId"
+      v-show="movieModal"
+      @close-method="closeMethod"
+    ></MovieModal>
   </v-container>
 </template>
 
 <script>
-export default {
-  name: 'HelloWorld',
+import MovieModal from './MovieComponent.vue'
 
+export default {
+  name: 'TopPage',
+  components: {
+    MovieModal
+  },
   data: () => ({
+    videoId: '',
+    movieModal: false,
     ecosystem: [
       {
-        text: 'vuetify-loader',
+        text: 'あ',
         href: 'https://github.com/vuetifyjs/vuetify-loader'
       },
       {
-        text: 'github',
+        text: 'い',
         href: 'https://github.com/vuetifyjs/vuetify'
       },
       {
-        text: 'awesome-vuetify',
+        text: 'う',
         href: 'https://github.com/vuetifyjs/awesome-vuetify'
       }
     ],
     importantLinks: [
       {
-        text: 'Documentation',
+        text: 'あ',
         href: 'https://vuetifyjs.com'
       },
       {
-        text: 'Chat',
+        text: 'い',
         href: 'https://community.vuetifyjs.com'
       },
       {
-        text: 'Made with Vuetify',
+        text: 'う',
         href: 'https://madewithvuejs.com/vuetify'
       },
       {
-        text: 'Twitter',
+        text: 'え',
         href: 'https://twitter.com/vuetifyjs'
       },
       {
-        text: 'Articles',
+        text: 'お',
         href: 'https://medium.com/vuetify'
       }
     ],
     whatsNext: [
       {
-        text: 'Explore components',
+        text: 'あ',
         href: 'https://vuetifyjs.com/components/api-explorer'
       },
       {
-        text: 'Select a layout',
+        text: 'い',
         href: 'https://vuetifyjs.com/getting-started/pre-made-layouts'
       },
       {
-        text: 'Frequently Asked Questions',
+        text: 'う',
         href: 'https://vuetifyjs.com/getting-started/frequently-asked-questions'
       }
     ]
-  })
+  }),
+  methods: {
+    showModal (val) {
+      // ヘッダーを非表示に
+      this.$emit('emit-change', true)
+      this.videoId = val
+      this.movieModal = true
+    },
+    closeMethod (yes) {
+      // ヘッダーを表示に
+      this.videoId = ''
+      this.$emit('emit-change', false)
+      this.movieModal = false
+    }
+  }
 }
 </script>
 <style scoped>
-/*=== 9-1-2 丸が動いてスクロールを促す ====*/
-
-/*スクロールダウン全体の場所*/
 .scrolldown2 {
   /*描画位置※位置は適宜調整してください*/
   position: fixed;
   bottom: 20vh;
-  right: 8%;
+  right: 3%;
 }
 
-/*Scrollテキストの描写*/
 .scrolldown2 span {
   /*描画位置*/
   position: absolute;
-  left: 10px;
-  bottom: 12px;
+  left: 6px;
+  bottom: 17px;
   /*テキストの形状*/
   color: rgba(0, 0, 0, 0.753);
   font-size: 1rem;
@@ -172,7 +271,6 @@ export default {
   writing-mode: vertical-rl;
 }
 
-/* 丸の描写 */
 .scrolldown2:before {
   content: '';
   /*描画位置*/
@@ -189,7 +287,6 @@ export default {
     cirlemovehide 1.6s ease-out infinite;
 }
 
-/*下からの距離が変化して丸の全体が上から下に動く*/
 @keyframes circlemove {
   0% {
     bottom: 70px;
@@ -199,7 +296,6 @@ export default {
   }
 }
 
-/*上から下にかけて丸が透過→不透明→透過する*/
 @keyframes cirlemovehide {
   0% {
     opacity: 0;
@@ -215,7 +311,6 @@ export default {
   }
 }
 
-/* 線の描写 */
 .scrolldown2:after {
   content: '';
   /*描画位置*/
@@ -226,5 +321,105 @@ export default {
   width: 2px;
   height: 70px;
   background: rgba(0, 0, 0, 0.377);
+}
+
+/* ここから画像制御 */
+.zoomInText{/*テキストの基点となる位置を定義*/
+  position: relative;
+}
+
+.zoomInText span.mask{
+  position: relative;
+  transition: .3s ease-in-out;/*移り変わる速さを変更したい場合はこの数値を変更*/
+  display: block;/*画像をくくるspanタグをブロック要素にする*/
+    line-height: 0;/*行の高さを0にする*/
+    overflow:hidden;/*拡大してはみ出る要素を隠す*/
+}
+
+.zoomInText:hover span.mask::before{/*hoverした時の変化*/
+  content:"";
+  position: absolute;
+  z-index:2;
+  top:10px;
+  left:10px;
+  width: calc(100% - 20px);
+    height: calc(100% - 20px);
+  /* background:rgba(0,0,0,0.5);背景色 */
+}
+
+.zoomInText img{
+  transform: scale(1);
+  filter: blur(0);
+  transition: .3s ease-in-out;/*移り変わる速さを変更したい場合はこの数値を変更*/
+}
+
+.zoomInText:hover img{/*hoverした時の変化*/
+  transform: scale(1.2);/*拡大の値を変更したい場合はこの数値を変更*/
+  /* filter: blur(2px);ぼかし具合を変更したい場合はこの数値を変更 */
+}
+
+.zoomInText span.cap{
+  opacity:0;
+  transition: .5s ease-in-out;/*移り変わる速さを変更したい場合はこの数値を変更*/
+  position: absolute;
+  z-index:3;/*テキストを前面に出す*/
+  top: 50%;
+    left: 50%;
+  transform: translate(-50%,-50%);
+  color: rgba(255, 255, 255, 0.637);/*テキストの色を変えたい場合はここを修正*/
+    line-height: 1.5;/*行の高さを1.5にする*/
+}
+
+.zoomInText:hover span.cap{/*hoverした時の変化*/
+  opacity:1;
+}
+
+a{
+  color: #333;
+  text-decoration: none;
+}
+
+.lead{
+  text-align: center;
+  padding: 50px 20px;
+}
+
+/*画像のレスポンシブ*/
+
+img{
+  width:100%;
+  height: auto;
+}
+
+/* 横幅 */
+
+.zoomInText{
+  cursor: pointer;
+  width: 100%;
+    margin: 0 auto;/*中央揃え*/
+}
+
+.title-name{
+  position: absolute;
+  bottom: 0;
+  right:0;
+}
+
+.works-adjust{
+  max-width:95%;
+  padding-left: 2.5%;
+}
+
+.sumnale{
+  text-align: left;
+  color: rgba(0, 0, 0, 0.637);/*テキストの色を変えたい場合はここを修正*/
+  line-height: 1.5;/*行の高さを1.5にする*/
+}
+
+.bahn {
+  text-transform: none;
+  font-family: Bahnschrift;
+  font-size: 105%;
+  letter-spacing: 0.08em;
 }
 </style>

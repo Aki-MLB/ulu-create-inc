@@ -21,38 +21,54 @@
               <span class='mask'>
                 <img src='../assets/pug.jpg' alt=''>
                 <span class='title-name cap'>
-                  pug
                 </span>
                 <span class='cap'>
-                  はじまりの歌
                 </span>
               </span>
+            </div>
+            <div class="sumnale">
+              <p style="margin-left: 10px;">
+                pug<br>
+                <span style="padding-left: 5px;">└はじまりの歌</span>
+              </p>
             </div>
           </v-col>
           <v-col cols='4'>
             <div class='zoomInText' @click="showModal('NYhwDY01Zv8')">
               <span class='mask'>
                 <img src='../assets/tenjou_tenge.jpg' alt=''>
-                <span class='title-name cap'>
+                <!-- <span class='title-name cap'>
                   天上天下
                 </span>
                 <span class='cap'>
                   君に価値なんてないよ
-                </span>
+                </span> -->
               </span>
+            </div>
+            <div class="sumnale">
+              <p style="margin-left: 10px;">
+                天上天下<br>
+                <span style="padding-left: 5px;">└君に価値なんてないよ</span>
+              </p>
             </div>
           </v-col>
           <v-col cols='4'>
-            <div class='zoomInText' @click="showModal()">
+            <div class='zoomInText' @click="showModal('wHamtmY6png')">
               <span class='mask'>
                 <img src='../assets/ibara_bluse.jpg' alt='wHamtmY6png'>
-                <span class='title-name cap'>
+                <!-- <span class='title-name cap'>
                   パレットパレッツ
                 </span>
                 <span class='cap'>
                   イバラブルース
-                </span>
+                </span> -->
               </span>
+            </div>
+            <div class="sumnale">
+              <p style="margin-left: 10px;">
+                パレットパレッツ<br>
+                <span style="padding-left: 5px; padding-right:5px;">└イバラブルース</span>
+              </p>
             </div>
           </v-col>
           <v-col cols='4'>
@@ -222,13 +238,13 @@ export default {
   }),
   methods: {
     showModal (val) {
-      // ヘッダーを非表示に
+      // ヘッダーを非表示
       this.$emit('emit-change', true)
       this.videoId = val
       this.movieModal = true
     },
     closeMethod (yes) {
-      // ヘッダーを表示に
+      // ヘッダーを表示
       this.videoId = ''
       this.$emit('emit-change', false)
       this.movieModal = false
@@ -332,7 +348,7 @@ export default {
   left:10px;
   width: calc(100% - 20px);
     height: calc(100% - 20px);
-  background:rgba(0,0,0,0.5);/*背景色*/
+  /* background:rgba(0,0,0,0.5);背景色 */
 }
 
 .zoomInText img{
@@ -343,7 +359,7 @@ export default {
 
 .zoomInText:hover img{/*hoverした時の変化*/
   transform: scale(1.2);/*拡大の値を変更したい場合はこの数値を変更*/
-  filter: blur(2px);/*ぼかし具合を変更したい場合はこの数値を変更*/
+  /* filter: blur(2px);ぼかし具合を変更したい場合はこの数値を変更 */
 }
 
 .zoomInText span.cap{
@@ -396,6 +412,12 @@ img{
 .works-adjust{
   max-width:95%;
   padding-left: 2.5%;
+}
+
+.sumnale{
+  text-align: left;
+  color: rgba(0, 0, 0, 0.637);/*テキストの色を変えたい場合はここを修正*/
+  line-height: 1.5;/*行の高さを1.5にする*/
 }
 
 </style>

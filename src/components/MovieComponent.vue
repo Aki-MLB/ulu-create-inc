@@ -4,7 +4,7 @@
       <button class="modal__btn" @click="close()">閉じる</button>
       <youtube
         :video-id="videoId"
-        :fitparent="true"
+        fitparent="true"
         width=960
         height=540
         :resize='true'
